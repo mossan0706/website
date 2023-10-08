@@ -20,6 +20,20 @@ https://www.docker.com/products/docker-desktop/
 3. Open with GitHub Desktop を押す
 4. 大体の場合、そのまま指示にしたかっクローンする
 
+## env ファイルの作成
+
+プロジェクトルート（C:\Users\(あなたの名前)\Documents\GitHub\website）に `.env` という名前でファイルを作成し、下記を記述
+
+```.env
+# 環境を指定（今はdevelopment or productionのみ対応
+# development はnest.jsを--watchモードで、nextをnext devで起動する
+NODE_ENV=development
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=password
+POSTGRES_DB=postgres
+```
+
 ## イメージの作成、コンテナの起動
 
 （ここからはコマンドで、、、こっちのほうが動作が少ないんですよ、、、）
@@ -42,3 +56,20 @@ http://localhost:4000/
 # コーディング規約（戒め）
 
 基本、設定されている ESlint に従う
+
+ID: dbaeumer.vscode-eslint
+リンク: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+レコメンドで上記拡張機能が入ってるから保存すればきれいになるやろ？、、、とは思いつつ、手動での方法も下記に
+
+```sh
+cd frontend
+npm run lint
+```
+
+```sh
+cd backend
+npm run lint
+```
+
+（命名規則など真面目な奴は後で追記します）
